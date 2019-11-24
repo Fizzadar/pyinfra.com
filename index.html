@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>pyinfra automates/provisions/manages/deploys infrastructure super fast at massive scale</title>
+    <link rel="stylesheet" type="text/css" href="static/github.css">
+    <link rel="shortcut icon" href="static/logo_small.png" type="image/x-icon">
+    <link rel="icon" href="static/logo_small.png" type="image/x-icon">
+  </head>
+  <body>
+    <div class="container">
+      <div id="markup">
+        <article id="content" class="markdown-body"><h1>
+    <a href="https://pyinfra.com">
+        <img src="static/logo.png" height="48px">
+    </a>
+</h1>
+
+<p><a href="https://pypi.python.org/pypi/pyinfra"><img alt="PyPI version" src="https://img.shields.io/pypi/v/pyinfra?color=blue"></a>
+<a href="https://pyinfra.readthedocs.io/"><img alt="Docs status" src="https://img.shields.io/readthedocs/pyinfra"></a>
+<a href="https://travis-ci.org/Fizzadar/pyinfra"><img alt="Travis.CI status" src="https://img.shields.io/travis/Fizzadar/pyinfra"></a>
+<a href="https://codecov.io/github/Fizzadar/pyinfra"><img alt="Codecov Coverage" src="https://img.shields.io/codecov/c/gh/Fizzadar/pyinfra"></a>
+<a href="https://github.com/Fizzadar/pyinfra/blob/develop/LICENSE.md"><img alt="MIT Licensed" src="https://img.shields.io/pypi/l/pyinfra"></a></p>
+<p>pyinfra automates/provisions/manages/deploys infrastructure super
+fast at massive scale. It can be used for ad-hoc command execution,
+service deployment, configuration management and more. Core design
+features include:</p>
+<ul>
+<li>🚀 <strong>Super fast</strong> execution over thousands of targets with predictable performance</li>
+<li>🚨 <strong>Instant debugging</strong> with stdout + stderr output on error, and <code>-v</code> to print it always</li>
+<li>💻 <strong>Agentless execution</strong> by speaking native SSH/Docker/subprocess depending on the target</li>
+<li>❗️ <strong>Two stage process</strong> that enables <code>--dry</code> runs before making any changes</li>
+<li>📦 <strong>Extendable</strong> with <em>any</em> Python package as configured &amp; written in standard Python</li>
+</ul>
+<p>When you run pyinfra you'll see something like (<a href="static/example_deploy.png">non animated version</a>):</p>
+<p><img src="static/example_deploy.gif" title="" style="" width="100%"></p>
+<h2>Quickstart</h2>
+<p>pyinfra can be installed via pip:</p>
+<div class="codehilite"><pre>pip install pyinfra
+</pre></div>
+
+
+<p>Now you can execute commands &amp; operations over SSH:</p>
+<div class="codehilite"><pre><span class="c1"># Execute an abitrary shell command</span>
+pyinfra my-server.net <span class="nb">exec</span> -- <span class="nb">echo</span> <span class="s2">"hello world"</span>
+
+<span class="c1"># Install iftop apt package if not present</span>
+pyinfra my-server.net apt.packages iftop <span class="nv">sudo</span><span class="o">=</span><span class="nb">true</span>
+</pre></div>
+
+
+<p>These can then be saved to a <em>deploy file</em>, let's call it <code>deploy.py</code>:</p>
+<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">pyinfra.modules</span> <span class="kn">import</span> <span class="n">apt</span>
+
+<span class="n">apt</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">'Install iftop'</span><span class="p">},</span>
+    <span class="s">'iftop'</span><span class="p">,</span>
+    <span class="n">sudo</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>And executed with:</p>
+<div class="codehilite"><pre>pyinfra my-server.net deploy.py
+</pre></div>
+
+
+<h2>Documentation</h2>
+<ul>
+<li><a href="https://pyinfra.readthedocs.io/page/getting_started.html">Getting started</a></li>
+<li><a href="https://pyinfra.readthedocs.io/">Documentation</a></li>
+<li><a href="http://127.0.0.1:51004/view/example">Example deploy</a></li>
+<li><a href="https://pyinfra.readthedocs.io/page/api/example.html">API Example</a></li>
+<li><a href="https://pyinfra.readthedocs.io/page/deploy_process.html">How the deploy works</a></li>
+</ul></article>
+      </div>
+    </div>
+
+</body></html>
