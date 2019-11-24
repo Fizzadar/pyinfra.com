@@ -1,0 +1,53 @@
+/* roboto-slab-500 - latin */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+       url('./fonts/roboto-slab-v10-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./fonts/roboto-slab-v10-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+header {
+    margin-top: 60px;
+}
+
+h1 {
+    width: auto;
+    display: inline-block;
+    margin-top: -16px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+h1 img {
+    float: left;
+    margin-top: -5px;
+    margin-right: 5px;
+}
+
+.container {
+    max-width: 720px;
+}
+
+header nav {
+    vertical-align: top;
+    margin-top: -5px;
+    float: right;
+}
+
+header nav a {
+    color: #999;
+    font-weight: bold;
+    font-size: 16px;
+}
+header nav a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid #D7D7D7;
+    color: #333;
+}
+
+h2 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 500;
+}
