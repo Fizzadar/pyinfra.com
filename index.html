@@ -61,12 +61,13 @@ pyinfra my-server.net apt.packages iftop <span class="nv">sudo</span><span class
 
 
                 <p>These can then be saved to a <em>deploy file</em>, let's call it <code>deploy.py</code>:</p>
-<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">pyinfra.modules</span> <span class="kn">import</span> <span class="n">apt</span>
+<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">pyinfra.operations</span> <span class="kn">import</span> <span class="n">apt</span>
 
 <span class="n">apt</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span>
-    <span class="p">{</span><span class="s">'Install iftop'</span><span class="p">},</span>
-    <span class="s">'iftop'</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s">'Ensure iftop is installed'</span><span class="p">,</span>
+    <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s">'iftop'</span><span class="p">],</span>
     <span class="n">sudo</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">update</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 
