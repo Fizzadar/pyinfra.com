@@ -20,13 +20,13 @@
     <header>
         <div class="container">
             <h1>
-                <img src="static/logo.png" height="48px">
-                pyinfra
+                <img src="static/logo_readme.png" width="100%">
             </h1>
             <nav>
-                <a href="https://docs.pyinfra.com">Docs</a>
-                <a href="https://github.com/Fizzadar/pyinfra">GitHub</a>
-                <a href="https://pypi.python.org/pypi/pyinfra">PyPI</a>
+                <a href="https://docs.pyinfra.com"><strong>Documentation</strong></a> &bull;
+                <a href="https://docs.pyinfra.com/page/getting_started.html"><strong>Getting Started</strong></a> &bull;
+                <a href="https://github.com/Fizzadar/pyinfra">GitHub</a> &bull;
+                <a href="https://pypi.python.org/pypi/pyinfra">PyPi</a>
             </nav>
         </div>
     </header>
@@ -56,7 +56,7 @@
 pyinfra my-server.net <span class="nb">exec</span> -- <span class="nb">echo</span> <span class="s2">"hello world"</span>
 
 <span class="c1"># Install iftop apt package if not present</span>
-pyinfra my-server.net apt.packages iftop <span class="nv">sudo</span><span class="o">=</span><span class="nb">true</span>
+pyinfra my-server.net apt.packages iftop <span class="nv">_sudo</span><span class="o">=</span><span class="nb">true</span>
 </pre></div>
 
 
@@ -66,8 +66,8 @@ pyinfra my-server.net apt.packages iftop <span class="nv">sudo</span><span class
 <span class="n">apt</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s">'Ensure iftop is installed'</span><span class="p">,</span>
     <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s">'iftop'</span><span class="p">],</span>
-    <span class="n">sudo</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
     <span class="n">update</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">_sudo</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 
@@ -95,7 +95,6 @@ pyinfra my-server.net apt.packages iftop <span class="nv">sudo</span><span class
             <li><a href="https://github.com/Fizzadar/pyinfra/issues">Issues</a></li>
         </ul>
         <ul></ul>
-        <p class="copyright">&copy; Nick Barrett</p>
     </div>
 </footer>
 

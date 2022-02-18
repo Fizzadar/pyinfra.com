@@ -43,14 +43,14 @@ h1 img {
 
 header nav {
     vertical-align: top;
-    margin-top: -5px;
-    float: right;
+    text-align:  center;
+    margin-bottom: -10px;
 }
 header nav a {
     color: #999;
     font-weight: bold;
     font-size: 16px;
-    margin-left: 10px;
+    margin: 0 5px;
 }
 header nav a:hover {
     color: #333;
