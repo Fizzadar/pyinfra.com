@@ -24,7 +24,7 @@
             </h1>
             <nav>
                 <a href="https://docs.pyinfra.com"><strong>Documentation</strong></a> &bull;
-                <a href="https://docs.pyinfra.com/page/getting_started.html"><strong>Getting Started</strong></a> &bull;
+                <a href="https://docs.pyinfra.com/page/getting-started.html"><strong>Getting Started</strong></a> &bull;
                 <a href="https://github.com/Fizzadar/pyinfra">GitHub</a> &bull;
                 <a href="https://pypi.python.org/pypi/pyinfra">PyPi</a>
             </nav>
@@ -46,35 +46,44 @@
                 </ul>
                 <p>When you run pyinfra you'll see something like (<a href="static/example_deploy.png">non animated version</a>):</p>
                 <p><img src="static/example_deploy.gif" title="" style="" width="100%"></p>
+
                 <h2>Quickstart</h2>
-                <p>pyinfra can be installed via pip:</p>
-                <div class="codehilite"><pre>pip install pyinfra</pre></div>
 
 
-                <p>Now you can execute commands &amp; operations over SSH:</p>
-<div class="codehilite"><pre><span class="c1"># Execute an abitrary shell command</span>
-pyinfra my-server.net <span class="nb">exec</span> -- <span class="nb">echo</span> <span class="s2">"hello world"</span>
-
-<span class="c1"># Install iftop apt package if not present</span>
-pyinfra my-server.net apt.packages iftop <span class="nv">_sudo</span><span class="o">=</span><span class="nb">true</span>
-</pre></div>
+                <p>Install pyinfra with <code>pipx</code> (recommended) or <code>pip</code>:</p>
+                <div class="codehilite"><pre>pipx install pyinfra</pre></div>
 
 
-                <p>These can then be saved to a <em>deploy file</em>, let's call it <code>deploy.py</code>:</p>
-<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">pyinfra.operations</span> <span class="kn">import</span> <span class="n">apt</span>
+                <p>Now you can execute commands over SSH:</p>
+                <div class="codehilite"><pre>pyinfra my-server.net <span class="nb">exec</span> -- <span class="nb">echo</span> <span class="s2">"hello world"</span></pre></div>
+
+
+                <p>Or target Docker, the local machine, and other <a href="https://docs.pyinfra.com/page/connectors.html">connectors</a>:</p>
+                <div class="codehilite"><pre>pyinfra @docker/ubuntu <span class="nb">exec</span> -- <span class="nb">echo</span> <span class="s2">"Hello world"</span>
+pyinfra @local <span class="nb">exec</span> -- <span class="nb">echo</span> <span class="s2">"Hello world"</span></pre></div>
+
+
+                <p>As well as executing commands you can define state using <a href="https://docs.pyinfra.com/page/operations.html">operations</a>:</p>
+                <div class="codehilite"><pre>pyinfra @docker/ubuntu apt.packages iftop <span class="nv">update</span><span class="o">=</span><span class="nb">true </span><span class="nv">_sudo</span><span class="o">=</span><span class="nb">true</span></pre></div>
+
+
+                <p>Which can then be saved as a Python file like <code>deploy.py</code>:</p>
+                <div class="codehilite"><pre><span class="kn">from</span> <span class="nn">pyinfra.operations</span> <span class="kn">import</span> <span class="n">apt</span>
 
 <span class="n">apt</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="s">'Ensure iftop is installed'</span><span class="p">,</span>
-    <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s">'iftop'</span><span class="p">],</span>
+    <span class="n">name</span><span class="o">=</span><span class="s">"Ensure iftop is installed"</span><span class="p">,</span>
+    <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s">"iftop"</span><span class="p">],</span>
     <span class="n">update</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
     <span class="n">_sudo</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
+<span class="p">)</span></pre></div>
 
 
-                <p>And executed with:</p>
-                <div class="codehilite"><pre>pyinfra my-server.net deploy.py</pre></div>
-            </article>
+                <p>And executed:</p>
+                <div class="codehilite"><pre>pyinfra @docker/ubuntu deploy.py</pre></div>
+
+
+                <p>Now you know pyinfra!</p>
+                <p>There's ways to store <a href="https://docs.pyinfra.com/page/inventory-data.html">inventory &amp; data in files</a>, a bunch of <a href="https://docs.pyinfra.com/page/operations.html">operations</a> and <a href="https://docs.pyinfra.com/page/facts.html">facts</a>, plus some <a href="https://docs.pyinfra.com/page/examples.html">documented examples</a> to help. See the more detailed <a href="https://docs.pyinfra.com/page/getting-started.html">getting started page</a> or <a href="https://docs.pyinfra.com/page/using-operations.html">using operations guide</a>.</p></article>
         </div>
     </div>
 </section>
@@ -82,16 +91,25 @@ pyinfra my-server.net apt.packages iftop <span class="nv">_sudo</span><span clas
 <footer>
     <div class="container">
         <ul>
-            <h4><li><a href="https://docs.pyinfra.com">Documentation</a></li></h4>
-            <li><a href="https://docs.pyinfra.com/page/getting_started.html">Getting started</a></li>
-            <li><a href="https://docs.pyinfra.com/page/deploys.html">Writing Deploys</a></li>
+            <h4><li>Documentation</li></h4>
+            <li><a href="https://docs.pyinfra.com/page/getting-started.html">Getting Started</a></li>
+            <li><a href="https://docs.pyinfra.com/page/using-operations.html">Using Operations</a></li>
+            <li><a href="https://docs.pyinfra.com/page/inventory-data.html">Inventory &amp; Data</a></li>
+            <li><a href="https://docs.pyinfra.com/page/arguments.html">Global Arguments</a></li>
             <li><a href="https://docs.pyinfra.com/page/cli.html">Using the CLI</a></li>
-            <li><a href="https://docs.pyinfra.com/page/connectors.html">Connectors</a></li>
         </ul>
         <ul>
-            <h4><li><a href="https://github.com/Fizzadar/pyinfra">pyinfra on GitHub</a></li></h4>
-            <li><a href="https://github.com/Fizzadar/pyinfra#readme">Readme</a></li>
-            <li><a href="https://github.com/Fizzadar/pyinfra/tree/master/examples#readme">Examples</a></li>
+            <h4><li>Reference</li></h4>
+            <li><a href="https://docs.pyinfra.com/page/examples.html">Example Deploys</a></li>
+            <li><a href="https://docs.pyinfra.com/page/connectors.html">Connectors Index</a></li>
+            <li><a href="https://docs.pyinfra.com/page/operations.html">Operations Index</a></li>
+            <li><a href="https://docs.pyinfra.com/page/facts.html">Facts Index</a></li>
+        </ul>
+        <ul>
+            <h4><li>Meta</li></h4>
+            <li><a href="https://docs.pyinfra.com/page/support.html">Help &amp; Support</a></li>
+            <li><a href="https://docs.pyinfra.com/page/contributing.html">Contributing</a></li>
+            <li><a href="https://github.com/Fizzadar/pyinfra">GitHub</a></li>
             <li><a href="https://github.com/Fizzadar/pyinfra/issues">Issues</a></li>
         </ul>
         <ul></ul>
