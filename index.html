@@ -32,6 +32,7 @@
             <nav>
                 <a href="https://docs.pyinfra.com"><strong>Documentation</strong></a> &bull;
                 <a href="https://docs.pyinfra.com/page/getting-started.html"><strong>Getting Started</strong></a> &bull;
+                <a href="https://matrix.to/#/#pyinfra:matrix.org"><strong>Matrix Room</strong></a> &bull;
                 <a href="https://github.com/Fizzadar/pyinfra">GitHub</a> &bull;
                 <a href="https://pypi.python.org/pypi/pyinfra">PyPi</a>
             </nav>
@@ -45,11 +46,11 @@
                 <p class="big">pyinfra automates infrastructure super fast at massive scale. It can be used for ad-hoc command execution, service deployment, configuration management and more. Core design features include:</p>
                 <ul class="features">
                 <li>🚀 <strong>Super fast</strong> execution over thousands of targets with predictable performance.</li>
-                <li>🚨 <strong>Instant debugging</strong> with stdout & stderr output on error or as required (<code>-v</code>|<code>-vv</code>|<code>-vvv</code>).</li>
-                <li>💻 <strong>Agentless execution</strong> by speaking native SSH/Docker/subprocess.</li>
-                <li>❗️ <strong>Two stage process</strong> that enables <code>--dry</code> runs before making any changes.</li>
+                <li>🚨 <strong>Instant debugging</strong> with realtime stdin/stdout/stderr output (<code>-vvv</code>).</li>
+                <li>🔄 <strong>Idempotent operations</strong> that enable diffs and<code>--dry</code> runs before making any changes.</li>
                 <li>📦 <strong>Extendable</strong> with <em>any</em> Python package as configured &amp; written in standard Python.</li>
-                <li>🔌 <strong>Integrated</strong> with Docker, Vagrant &amp; Ansible out of the box.</li>
+                <li>💻 <strong>Agentless execution</strong> against SSH/Docker/subprocess/WinRM hosts.</li>
+                <li>🔌 <strong>Integrated</strong> with Docker, Terraform, Vagrant/Mech &amp; Ansible out of the box.</li>
                 </ul>
                 <p>When you run pyinfra you'll see something like (<a href="static/example_deploy.png">non animated version</a>):</p>
                 <p><img src="static/example_deploy.gif" title="" style="" width="100%"></p>
@@ -88,9 +89,9 @@ pyinfra @local <span class="nb">exec</span> -- <span class="nb">echo</span> <spa
                 <p>And executed:</p>
                 <div class="codehilite"><pre>pyinfra @docker/ubuntu deploy.py</pre></div>
 
+                <p>Now you know the building blocks of pyinfra! By combining inventory, operations and Python code you can deploy anything.</p>
 
-                <p>Now you know pyinfra!</p>
-                <p>There's ways to store <a href="https://docs.pyinfra.com/page/inventory-data.html">inventory &amp; data in files</a>, a bunch of <a href="https://docs.pyinfra.com/page/operations.html">operations</a> and <a href="https://docs.pyinfra.com/page/facts.html">facts</a>, plus some <a href="https://docs.pyinfra.com/page/examples.html">documented examples</a> to help. See the more detailed <a href="https://docs.pyinfra.com/page/getting-started.html">getting started page</a> or <a href="https://docs.pyinfra.com/page/using-operations.html">using operations guide</a>.</p></article>
+                <p>See the more detailed <a href="https://docs.pyinfra.com/page/getting-started.html" rel="nofollow">getting started</a> or <a href="https://docs.pyinfra.com/page/using-operations.html" rel="nofollow">using operations</a> guides. See how to use <a href="https://docs.pyinfra.com/page/inventory-data.html" rel="nofollow">inventory &amp; data</a>, <a href="https://docs.pyinfra.com/page/arguments.html" rel="nofollow">global arguments</a> and <a href="https://docs.pyinfra.com/page/cli.html" rel="nofollow">the CLI</a> or check out the <a href="https://docs.pyinfra.com/page/examples.html" rel="nofollow">documented examples</a>.</p>
         </div>
     </div>
 </section>
