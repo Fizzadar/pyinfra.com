@@ -63,9 +63,10 @@ h2 {
 ul.features {
     display: flex;
     flex-wrap: wrap;
-    flex-justify: space-between;
+    justify-content: space-between;
     padding: 0;
     margin-top: 35px;
+    font-size: 18px;
 }
 ul.features li {
     width: 48%;
@@ -83,7 +84,7 @@ footer {
 footer div.container {
     display: flex;
     flex-wrap: wrap;
-    flex-justify: space-between;
+    justify-content: space-between;
 }
 footer ul {
     font-size: 16px;

@@ -43,23 +43,22 @@
     <div class="container">
         <div id="markup">
             <article id="content" class="markdown-body">
-                <p class="big">pyinfra automates infrastructure super fast at massive scale. It can be used for ad-hoc command execution, service deployment, configuration management and more. Core design features include:</p>
+                <p class="big">pyinfra automates infrastructure using Python. It’s fast and scales from one server to thousands. Great for ad-hoc command execution, service deployment, configuration management and more. Here's why you should try pyinfra:</p>
                 <ul class="features">
                 <li>🚀 <strong>Super fast</strong> execution over thousands of targets with predictable performance.</li>
                 <li>🚨 <strong>Instant debugging</strong> with realtime stdin/stdout/stderr output (<code>-vvv</code>).</li>
-                <li>🔄 <strong>Idempotent operations</strong> that enable diffs and<code>--dry</code> runs before making any changes.</li>
-                <li>📦 <strong>Extendable</strong> with <em>any</em> Python package as configured &amp; written in standard Python.</li>
-                <li>💻 <strong>Agentless execution</strong> against SSH/Docker/subprocess/WinRM hosts.</li>
-                <li>🔌 <strong>Integrated</strong> with Docker, Terraform, Vagrant/Mech &amp; Ansible out of the box.</li>
+                <li>🔄 <strong>Idempotent operations</strong> that enable diffs and dry runs before making changes.</li>
+                <li>📦 <strong>Extendable</strong> with the entire Python package ecosystem.</li>
+                <li>💻 <strong>Agentless execution</strong> against anything with shell access.</li>
+                <li>🔌 <strong>Integrated</strong> with connectors for Docker, Terraform, Vagrant and more.</li>
                 </ul>
-                <p>When you run pyinfra you'll see something like (<a href="static/example_deploy.png">non animated version</a>):</p>
                 <p><img src="static/example_deploy.gif" title="" style="" width="100%"></p>
 
                 <h2>Quickstart</h2>
 
 
-                <p>Install pyinfra with <code>pipx</code> (recommended) or <code>pip</code>:</p>
-                <div class="codehilite"><pre>pipx install pyinfra</pre></div>
+                <p>Install pyinfra with <code>pip</code>:</p>
+                <div class="codehilite"><pre>pip install pyinfra</pre></div>
 
 
                 <p>Now you can execute commands over SSH:</p>
