@@ -30,11 +30,6 @@
                 <img src="static/logo_readme.png" width="100%">
             </h1>
             <nav>
-                <a href="https://docs.pyinfra.com"><strong>Documentation</strong></a> &bull;
-                <a href="https://docs.pyinfra.com/page/getting-started.html"><strong>Getting Started</strong></a> &bull;
-                <a href="https://matrix.to/#/#pyinfra:matrix.org"><strong>Matrix Room</strong></a> &bull;
-                <a href="https://github.com/Fizzadar/pyinfra">GitHub</a> &bull;
-                <a href="https://pypi.python.org/pypi/pyinfra">PyPi</a>
             </nav>
         </div>
     </header>
@@ -45,84 +40,36 @@
             <article id="content" class="markdown-body">
                 <p class="big">pyinfra turns Python code into shell commands and runs them on your servers. Execute ad-hoc commands and write declarative operations. Target SSH servers, local machine and Docker containers. Fast and scales from one server to thousands.</p>
                 <p class="big">Think <code>ansible</code> but Python instead of YAML, and a lot faster.</p>
+            </article>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <article class="markdown-body">
                 <ul class="features">
-                <li>🚀 <strong>Super fast</strong> execution over thousands of targets with predictable performance.</li>
-                <li>🚨 <strong>Instant debugging</strong> with realtime stdin/stdout/stderr output (<code>-vvv</code>).</li>
-                <li>🔄 <strong>Declarative operations</strong> that enable diffs and dry runs before making changes.</li>
-                <li>📦 <strong>Extendable</strong> with the entire Python package ecosystem.</li>
-                <li>💻 <strong>Agentless execution</strong> against anything with shell access.</li>
-                <li>🔌 <strong>Integrated</strong> with connectors for Docker, Terraform, Vagrant and more.</li>
+                <li><i>🚀</i> <strong>Super fast</strong> execution over thousands of targets with predictable performance. Up to 10x faster than Ansible.</li>
+                <li><i>🚨</i> <strong>Instant debugging</strong> with realtime output from shell commands being executed and no abstraction layer.</li>
+                <li><i>🔄</i> <strong>Declarative operations</strong> that only make changes when needed and enable diff checking.</li>
+                <li><i>📦</i> <strong>Extendable</strong> with the entire Python package ecosystem. Inventory and operations are written in Python.</li>
+                <li><i>💻</i> <strong>Agentless execution</strong> against anything with POSIXish shell access, no dependencies on targets.</li>
+                <li><i>🔌</i> <strong>Integrated</strong> with other tools. Pull inventory from Terraform, execute against Docker containers.</li>
                 </ul>
-                <p><img src="static/example_deploy.gif" title="" style="" width="100%"></p>
 
-                <h2>Quickstart</h2>
-
-
-                <p>Install pyinfra with <code>pip</code>:</p>
-                <div class="codehilite"><pre>pip install pyinfra</pre></div>
-
-
-                <p>Now you can execute commands over SSH:</p>
-                <div class="codehilite"><pre>pyinfra my-server.net <span class="nb">exec</span> -- <span class="nb">echo</span> <span class="s2">"hello world"</span></pre></div>
-
-
-                <p>Or target Docker, the local machine, and other <a href="https://docs.pyinfra.com/page/connectors.html">connectors</a>:</p>
-                <div class="codehilite"><pre>pyinfra @docker/ubuntu <span class="nb">exec</span> -- <span class="nb">echo</span> <span class="s2">"Hello world"</span>
-pyinfra @local <span class="nb">exec</span> -- <span class="nb">echo</span> <span class="s2">"Hello world"</span></pre></div>
-
-
-                <p>As well as executing commands you can define state using <a href="https://docs.pyinfra.com/page/operations.html">operations</a>:</p>
-                <div class="codehilite"><pre>pyinfra @docker/ubuntu apt.packages iftop <span class="nv">update</span><span class="o">=</span><span class="nb">true </span><span class="nv">_sudo</span><span class="o">=</span><span class="nb">true</span></pre></div>
-
-
-                <p>Which can then be saved as a Python file like <code>deploy.py</code>:</p>
-                <div class="codehilite"><pre><span class="kn">from</span> <span class="nn">pyinfra.operations</span> <span class="kn">import</span> <span class="n">apt</span>
-
-<span class="n">apt</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="s">"Ensure iftop is installed"</span><span class="p">,</span>
-    <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s">"iftop"</span><span class="p">],</span>
-    <span class="n">update</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-    <span class="n">_sudo</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-<span class="p">)</span></pre></div>
-
-
-                <p>And executed:</p>
-                <div class="codehilite"><pre>pyinfra @docker/ubuntu deploy.py</pre></div>
-
-                <p>Now you know the building blocks of pyinfra! By combining inventory, operations and Python code you can deploy anything.</p>
-
-                <p>See the more detailed <a href="https://docs.pyinfra.com/page/getting-started.html" rel="nofollow">getting started</a> or <a href="https://docs.pyinfra.com/page/using-operations.html" rel="nofollow">using operations</a> guides. See how to use <a href="https://docs.pyinfra.com/page/inventory-data.html" rel="nofollow">inventory &amp; data</a>, <a href="https://docs.pyinfra.com/page/arguments.html" rel="nofollow">global arguments</a> and <a href="https://docs.pyinfra.com/page/cli.html" rel="nofollow">the CLI</a> or check out the <a href="https://docs.pyinfra.com/page/examples.html" rel="nofollow">documented examples</a>.</p>
+            </article>
+        </div>
+    </div>
+    <div class="container buttons">
+        <a class="button" href="https://docs.pyinfra.com/page/getting-started.html">Getting Started</a>
+        <a class="button" href="https://github.com/pyinfra-dev/pyinfra-examples">Examples Repo</a>
+        <div class="links">
+            <a href="https://docs.pyinfra.com">Documentation</a> &bull;
+            <a href="https://matrix.to/#/#pyinfra:matrix.org">Chat on Matrix</a> &bull;
+            <a href="https://github.com/Fizzadar/pyinfra">GitHub</a>
         </div>
     </div>
 </section>
 
-<footer>
-    <div class="container">
-        <ul>
-            <h4><li>Documentation</li></h4>
-            <li><a href="https://docs.pyinfra.com/page/getting-started.html">Getting Started</a></li>
-            <li><a href="https://docs.pyinfra.com/page/using-operations.html">Using Operations</a></li>
-            <li><a href="https://docs.pyinfra.com/page/inventory-data.html">Inventory &amp; Data</a></li>
-            <li><a href="https://docs.pyinfra.com/page/arguments.html">Global Arguments</a></li>
-            <li><a href="https://docs.pyinfra.com/page/cli.html">Using the CLI</a></li>
-        </ul>
-        <ul>
-            <h4><li>Reference</li></h4>
-            <li><a href="https://docs.pyinfra.com/page/examples.html">Example Deploys</a></li>
-            <li><a href="https://docs.pyinfra.com/page/connectors.html">Connectors Index</a></li>
-            <li><a href="https://docs.pyinfra.com/page/operations.html">Operations Index</a></li>
-            <li><a href="https://docs.pyinfra.com/page/facts.html">Facts Index</a></li>
-        </ul>
-        <ul>
-            <h4><li>Meta</li></h4>
-            <li><a href="https://docs.pyinfra.com/page/support.html">Help &amp; Support</a></li>
-            <li><a href="https://docs.pyinfra.com/page/contributing.html">Contributing</a></li>
-            <li><a href="https://github.com/Fizzadar/pyinfra">GitHub</a></li>
-            <li><a href="https://github.com/Fizzadar/pyinfra/issues">Issues</a></li>
-        </ul>
-        <ul></ul>
-    </div>
-</footer>
+<footer></footer>
 
 <script async defer data-domain="pyinfra.com" src="https://stats.oxygem.com/js/index.js"></script>
 </body></html>
