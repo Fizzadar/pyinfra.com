@@ -154,19 +154,6 @@ footer p.copyright {
     margin: 30px 0 0 0;
 }
 
-
-@media all and (max-width: 768px) {
-    ul.features li {
-        width: 100%;
-        font-size: 18px;
-    }
-
-    footer ul {
-        width: 100%;
-    }
-}
-
-
 div.buttons {
     font-size: 18px;
     display: flex;
@@ -204,4 +191,21 @@ div.buttons a.button:hover {
     background: rgb(74, 163, 84);
     box-shadow: 7px 7px 0 rgb(62, 142, 72);
     cursor: pointer;
+}
+
+
+@media all and (max-width: 768px) {
+    ul.features li {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    footer ul {
+        width: 100%;
+    }
+
+    div.buttons a.button {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
